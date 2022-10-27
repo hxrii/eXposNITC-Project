@@ -1,0 +1,33 @@
+type
+Student	{
+	str name;
+	int marks;
+	}
+endtype
+
+int main(){
+decl
+	int num, temp, sum, avg;
+    
+	Student stud1;
+    Student stud2;
+enddecl
+
+begin
+	temp = exposcall("Heapset");
+	stud1 =  exposcall("Alloc", 2); 
+    stud2 =  exposcall("Alloc", 2); 
+	stud1.name = "John";
+	stud1.marks = 89;
+    stud2.name = "John";
+    stud2.marks = 90;
+    sum = stud1.marks + stud2.marks;
+    avg = sum/2;
+    
+    temp = exposcall("Write", -2, stud1.name);
+    temp = exposcall("Write", -2, stud1.marks); 
+    temp = exposcall("Write", -2, avg); 
+
+	return 0;
+end
+}
